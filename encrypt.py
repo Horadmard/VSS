@@ -22,4 +22,4 @@ def text_to_image(text, output_image_path):
     image.save(output_image_path)
 
 # Example usage
-text_to_image("Hello, World!", "output_image.png")
+text_to_image("This is a Secret code!!", "output_image.png")
