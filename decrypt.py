@@ -20,5 +20,5 @@ def image_to_text(input_image_path):
     return text
 
 # Example usage
-original_text = image_to_text("output_image.png")
-print(original_text)
+# original_text = image_to_text("output_image.png")
+# print(original_text)
