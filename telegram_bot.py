@@ -2,7 +2,8 @@ from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-import encrypt, decrypt
+import encrypt
+import decrypt
 
 TOKEN: Final = '7466693725:AAGgIIkrIkBwTMm5gzzOhsTkkuUGo_k0il8'
 BOT_USERNAME: Final = '@ccryptocupbot'
@@ -14,18 +15,21 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     2. Decrypte an Image and reach to a Text\
     3. Do nothing, Thanks for nothing!')
 
+
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('There is Noting we can Do!!')
 
+
 async def enc_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('No! i get no command from you!')
+
 
 async def dec_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('No! i get no command from you!')
 
 
 def handle_response(text: str) -> str:
-        
+
     # print('What do you wanna do?\
     # 1. Encrypt Text into an Image\
     # 2. Decrypte an Image and reach to a Text\
@@ -35,7 +39,7 @@ def handle_response(text: str) -> str:
     choice, plain_text, image_name = text.split()
 
     # choice = int(input())
-    
+
     if int(choice) == 1:
         # enc_command()
         # plain_text = input('Your massage:')
@@ -65,7 +69,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             response: str = handle_response(new_text)
 
         else:
-            return 
+            return
     else:
         response: str = handle_response(text)
 
